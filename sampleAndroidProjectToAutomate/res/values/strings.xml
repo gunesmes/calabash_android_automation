@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Sample App for Test Automation</string>
+    <string name="hello_world">Sample Application For Test Automation</string>
+    <string name="action_settings">Settings</string>
+    
+    <string name="Submit">login</string>
+    <string name="TextView">Enter cridentials or Sign-up</string>
+    <string name="username">username</string>
+    <string name="password">password</string>
+    
+    <string name="home_message">Welcome to Home Page</string>
+    
+</resources>
