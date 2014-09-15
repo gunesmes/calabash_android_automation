@@ -51,3 +51,4 @@ emulator-5554	offline
 
     `calabash-android run sampleAndroidProjectToAutomate/bin/sampleAndroidProjectForAutomation.apk ADB_DEVICE_ARG=0646944421157e89 --tag @t`
 
+![alt tag](https://lh4.googleusercontent.com/-HAj7-3bHsdA/VBaXlF3I5YI/AAAAAAAAB2I/gkEKwVEEYlc/w1005-h712-no/calabash_cucumber_android_test_result.png)
