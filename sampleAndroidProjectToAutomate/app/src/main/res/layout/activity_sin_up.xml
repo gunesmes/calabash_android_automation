@@ -6,29 +6,14 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity">
+    tools:context="com.example.mesutgunes.sampleandroidprojecttoautomate.SinUp"
+    android:focusable="true">
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
-
-    <Button
-        android:id="@+id/submit"
-        android:layout_width="80dp"
-        android:layout_height="40dp"
-        android:hint="@string/Submit"
-        android:minHeight="40dp"
-        android:text="@string/Submit"
-        android:textColor="@android:color/holo_green_dark"
-        android:textColorHint="@android:color/holo_green_dark"
-        android:textSize="14sp"
-        tools:targetApi="14"
-        android:maxWidth="80dp"
-        android:layout_alignTop="@+id/signup"
-        android:layout_alignParentStart="false"
-        android:layout_alignParentEnd="true" />
+        android:text="@string/hello_sign_up" />
 
     <EditText
         android:id="@+id/username"
@@ -56,28 +41,59 @@
         android:id="@+id/message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/password"
-        android:layout_below="@+id/password"
+        android:text="@string/TextView_sign_up"
+        android:textColor="#2E2EFE"
+        android:layout_below="@+id/re_password"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_marginTop="14dp"
-        android:text="@string/TextView"
-        android:textColor="#2E2EFE" />
+        android:layout_alignLeft="@+id/re_password" />
 
     <Button
-        android:id="@+id/signup"
+        android:id="@+id/sign_up"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="80dp"
         android:layout_height="40dp"
-        android:layout_marginTop="10dp"
         android:minHeight="40dp"
         android:text="@string/sign_up"
-        android:textColor="@android:color/holo_red_light"
+        android:textColor="@android:color/holo_green_dark"
         android:textColorHint="@android:color/holo_red_light"
         android:textSize="14sp"
-        tools:targetApi="14"
+        android:layout_gravity="right"
+        android:hint="@string/sign_up"
+        android:maxWidth="80dp"
+        android:layout_alignTop="@+id/submit"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:hint="@string/Submit"
+        android:minHeight="40dp"
+        android:text="@string/Submit"
+        android:textColor="@android:color/holo_red_dark"
+        android:textColorHint="@android:color/holo_green_dark"
+        android:textSize="14sp"
+        android:layout_gravity="center_horizontal"
         android:clickable="false"
-        android:hint="@string/re_password"
+        android:layout_toStartOf="@+id/sign_up"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/sign_up"
         android:layout_below="@+id/message"
-        android:layout_toLeftOf="@+id/submit"
-        android:layout_toStartOf="@+id/submit" />
+        android:layout_marginTop="10dp" />
+
+    <EditText
+        android:id="@+id/re_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/re_password"
+        android:inputType="textPassword"
+        android:layout_below="@+id/password"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="false"
+        android:layout_marginTop="14dp"
+        android:password="false" />
 
 </RelativeLayout>

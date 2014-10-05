@@ -9,6 +9,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.content.Intent;
+
+import java.util.Dictionary;
+import java.util.Objects;
 
 
 public class MainActivity extends Activity {
@@ -18,8 +22,13 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button button = (Button) findViewById(R.id.submit);
-        button.setOnClickListener(new View.OnClickListener(){
+        final Users users;
+        users = ((Users)getApplicationContext());
+
+        final Auth auth = new Auth();
+
+        Button submit_button = (Button) findViewById(R.id.submit);
+        submit_button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 // Perform action on click
                 EditText username = (EditText) findViewById(R.id.username);
@@ -28,14 +37,34 @@ public class MainActivity extends Activity {
                 EditText password = (EditText) findViewById(R.id.password);
                 String password_value = password.getText().toString();
 
-                if ((username_value.equals("mesut")) && (password_value.equals("12345"))){
-                    setContentView(R.layout.home_page);
+                TextView text_message = (TextView) findViewById(R.id.message);
+                String password_auth = auth.get_password(username_value).toString();
+
+                if (password_auth.toString().equals(password_value.toString())){
+                    System.out.println("passwords are same!");
+                    System.out.println(password_auth + " : " + password_value);
                 }
-                else{
-                    TextView text = (TextView) findViewById(R.id.message);
-                    text.setText("Username or Password is incorrect!");
-                    text.setTextColor(Color.RED);
+
+                try {
+                    if (password_value.equals(password_auth) && !password_value.equals("")) {
+                        setContentView(R.layout.home_page);
+                    } else {
+                        text_message.setText("Username or Password is incorrect!");
+                        text_message.setTextColor(Color.RED);
+                    }
+                } catch (NullPointerException e) {
+                    text_message.setText("Username is not registered!");
+                    text_message.setTextColor(Color.RED);
                 }
+            }
+
+        });
+
+        final Button sign_up_button = (Button) findViewById(R.id.signup);
+        sign_up_button.setOnClickListener(  new View.OnClickListener(){
+            public void onClick(View v) {
+                // Perform action on click
+                startActivity(new Intent(v.getContext(), SinUp.class));
             }
         });
 
