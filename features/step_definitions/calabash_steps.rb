@@ -1,11 +1,26 @@
 require 'calabash-android/calabash_steps'
 
+----------------------------------------------------------
+----------------------  GIVEN  ---------------------------
+----------------------------------------------------------
+
 Given(/^I open the application$/) do
 	wait_for(180) {element_exists("button id:'submit'")}
 end
 
-Then(/^I should see "(.*?)" page$/) do |page|
-	query "TextView marked:'#{Messages.pages[page]}'"
+Given(/^I go to "(.*?)" page$/) do |page_button|
+	button_query =  "android.widget.Button marked:'#{page_button}'"
+	touch(button_query)
+end
+
+
+----------------------------------------------------------
+-----------------------  WHEN  ---------------------------
+----------------------------------------------------------
+
+When(/^I press "(.*?)" button$/) do |button|
+	button_query =  "android.widget.Button marked:'#{button}'"
+	touch(button_query)
 end
 
 When(/^I enter "(.*?)" text field as "(.*?)"$/) do |text_field, value|
@@ -13,9 +28,13 @@ When(/^I enter "(.*?)" text field as "(.*?)"$/) do |text_field, value|
     keyboard_enter_text value
 end
 
-When(/^I press "(.*?)" button$/) do |button|
-	button_query =  "android.widget.Button marked:'#{button}'"
-	touch(button_query)
+
+----------------------------------------------------------
+-----------------------  THEN  ---------------------------
+----------------------------------------------------------
+
+Then(/^I should see "(.*?)" page$/) do |page|
+	query "TextView marked:'#{Messages.pages[page]}'"
 end
 
 Then(/^I should see message as "(.*?)"$/) do |message|
@@ -30,7 +49,3 @@ Then(/^I should see home page$/) do
 	message.should == 'Welcome to Home Page'
 end
 
-Given(/^I go to "(.*?)" page$/) do |page_button|
-	button_query =  "android.widget.Button marked:'#{page_button}'"
-	touch(button_query)
-end

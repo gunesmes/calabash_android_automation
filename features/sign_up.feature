@@ -25,7 +25,6 @@ Feature: Sign-up feature
 	  	When I press "sign-up" button
 	  	Then I should see message as "Please fill the form"
 
-	  @t	
 	  Scenario: User should see succesfull registion message
 	  	When I enter "username" text field as "Mesut"
 	  	When I enter "password" text field as "Mesut"
