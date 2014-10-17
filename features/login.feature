@@ -16,6 +16,4 @@ Feature: Login feature
 	    When I enter "username" text field as "mesut-test"
 	    And I enter "password" text field as "12345"
 	    And I press "login" button
-	    Then I should see "home page"
-
-	  
+	    Then I should see "home page"  
