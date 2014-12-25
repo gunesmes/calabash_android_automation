@@ -2,21 +2,17 @@
 
 Make sure you have Ruby 1.9 or above installed (Ruby 2.0+ recommended).
 
-Install bundler unless you already have it installed:
 
-    gem install bundler
-
-(or sudo gem install bundler)
-
-
-Install gems in the `Gemfile`:
-
-    bundle install
+Install calabash-android:
+	
+		sudo gem install calabash-android
 
 
 # To run Calabash for Android
 
-To run the Android tests, ensure a recent Android SDK is installed, and that
+To run the Android tests, ensure that you have recent Android SDK
+		
+* Dowload Android SDK and put it following directory: $HOME/Android/sdk
 
 * environment variable `ANDROID_HOME` is set to point to the sdk folder, such as:
 
@@ -27,6 +23,7 @@ set PATH $HOME/Android/sdk/tools $PATH
 set PATH $HOME/Android/sdk/platform-tools $PATH
 set JAVA_HOME /Library/Java/JavaVirtualMachines/1.8.0_20-b26/Contents/Home/bin/java
 ````
+
 
 # Runing Calabash
 
